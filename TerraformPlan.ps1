@@ -30,8 +30,8 @@ terraform init --backend-config $tfstateFile -reconfigure
 terraform validate
 
 terraform plan -out="$plan" -var-file="$varFile" `
-	-var "shared_subscription_id=$SubscriptionId" `
-	-var "shared_tenant_id=$TenantId" `
-	-var "shared_client_id=$ClientId" `
-	-var "shared_client_secret=$ClientSecret" `
-	-var "shared_resource_group=$ResourceGroup"
+	-var "subscription_id=$SubscriptionId" `
+	-var "tenant_id=$TenantId" `
+	-var "client_id=$ClientId" `
+	-var "client_secret=$ClientSecret" `
+	-var "resource_group=$ResourceGroup"
