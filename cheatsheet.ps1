@@ -19,6 +19,8 @@ function MyFunction {
 }
 MyFunction -Name "John" -Age 25
 -------------------------------------------------------------------
+FIBONACCI SERIES
+
 $Count = Read-Host "Enter how many Fibonacci numbers to print"
 $a = 0
 $b = 1
@@ -33,6 +35,8 @@ for ($i = 2; $i -lt $Count; $i++) {
     $b = $c
 }
 -----------------------------------------------------------
+STRING REVERSE
+
 $str = "hello"
 $rev = ""
 
