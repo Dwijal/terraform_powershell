@@ -42,3 +42,22 @@ foreach ($vmName in $vmNames) {
 
     Write-Host "Updated VM: $vmName"
 }
+####################################################################################################################################
+START ALL THE VM
+
+$vms = Get-AzVM -ResourceGroupName "rg1"
+
+foreach ($vm in $vms) {
+    Start-AzVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName
+}
+####################################################################################################################################
+TAG ALL THE VM
+$vms = Get-AzVM
+
+foreach ($vm in $vms) {
+    $vm.Tags["env"] = "prod"
+    Update-AzVM -ResourceGroupName $vm.ResourceGroupName -VM $vm
+}
+####################################################################################################################################
+GET VM IN SPCEIFIC REGION
+Get-AzVM | Where-Object { $_.Location -eq "CentralIndia" }
